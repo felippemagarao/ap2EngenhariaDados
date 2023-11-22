@@ -24,9 +24,7 @@ public class Principal {
     public static void main(String[] args) throws SQLException {
 
         Professor professor1 = new Professor("12345678912", "Patrick", LocalDate.of(2023, 1, 30), "Spinning", "Noite", 3550.5);
-        Professor professor2 = new Professor("23412345632", "Mariana", LocalDate.of(2022, 1, 30), "Natação", "Integral", 2550.5);
-        Professor professor3 = new Professor("69587432195", "João", LocalDate.of(2022, 12, 30), "Boxing", "Manhã", 2550.5);
-
+       
         
         ConnectionFactory fabricaDeConexao = new ConnectionFactory();
         Connection connection = fabricaDeConexao.recuperaConexao();
@@ -35,20 +33,14 @@ public class Principal {
         
 
         pdao.create(professor1);
-        pdao.create(professor2);
-        pdao.create(professor3);
-       
+              
 
         Aluno aluno1 = new Aluno("74125896321", "Maycon", LocalDate.of(2021, 10, 20), "Rua Joaquim, 34", "99874521", "maycon@gmail.com", "Boxing");
-        Aluno aluno2 = new Aluno("74147414741", "Joana D'arc", LocalDate.of(2022, 10, 20), "Rua Pedrosa, 434", "992254785", "cabeca@gmail.com", "Natação");
-        Aluno aluno3 = new Aluno("98752846987", "Otavio", LocalDate.of(2023, 11, 20), "Rua Henrique Joaquim, 186", "741854698", "otvinho@gmail.com", "Spinning");
-
+       
 
         AlunoDAO adao = new AlunoDAO(connection);
         adao.create(aluno1);
-        adao.create(aluno2);
-        adao.create(aluno3);
-
+       
         Funcionario funcionario1 = new Funcionario("47856941211", "João", "Administrador",2000);
 
         FuncionarioDAO fdao = new FuncionarioDAO(connection);
